@@ -24,6 +24,7 @@ export const HeaderButtons=styled.div`
 export const HeaderButton=styled.a`
     font-family:'Helvetica';
     font-size:25px;
+    text-decoration:none;
     cursor: pointer;
     &:hover{
         border-bottom:2px solid gray;

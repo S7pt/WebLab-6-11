@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const TileContainer=styled.div`
+    margin-top:10px;
     height:500px;
     width:400px;
     border:6px #545454 solid;
@@ -10,6 +11,7 @@ export const TileContainer=styled.div`
     justify-content:space-around;
     align-items:center;
     border-radius:10px;
+    margin-bottom:15px;
 `;
 export const TileTitle=styled.h1`
     font-family:Arial, Helvetica, sans-serif;
@@ -17,8 +19,17 @@ export const TileTitle=styled.h1`
 export const TileText=styled.p`
     font-family:Arial, Helvetica, sans-serif;
     width:300px;
+    text-align:center;
     `;
 export const TilePriceTag=styled.p`
     font-family:Arial, Helvetica, sans-serif;
     font-size:14px;
     `;
+export const TileButton=styled.button`
+    border-radius:15px;
+    border-color:black;
+    height:40px;
+    width:100px;
+    margin-bottom:5px;
+    background-color:#000ed0;
+    color:white;`

@@ -5,6 +5,6 @@ export const MainBodyContainer=styled.div`
     margin-top:15px;
     background-color:white;
     width:1450px;
-    padding-bottom:30px;
+    padding-bottom:10px;
     padding-top:30px;
 `
