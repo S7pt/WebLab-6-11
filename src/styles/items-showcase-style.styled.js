@@ -12,3 +12,12 @@ flex-direction:row;
 justify-content:space-around;
 margin-left:15px;
 flex-wrap:wrap;`
+
+export const ViewMoreButton=styled.button`
+    border-radius:15px;
+    border-color:black;
+    height:40px;
+    width:100px;
+    margin-bottom:5px;
+    background-color:#000ed0;
+    color:white;`

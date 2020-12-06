@@ -3,14 +3,14 @@ import { TileContainer, TileTitle, TileText,TilePriceTag,TileButton } from "../s
 function Image({source,height,width}){
     return(<img src={source} height={height} width={width}></img>)
 }
-export function Tile({source,title,text,price}){
+export function Tile({source,title,text,price,id}){
     return(
     <TileContainer>
         <Image source={source} height="250px" width="250px" alt=""></Image>
         <TileTitle>{title}</TileTitle>
         <TileText>{text}</TileText>
         <TilePriceTag>Price:{price}$</TilePriceTag>
-        <TileButton>View More</TileButton>
+        <TileButton href={"/insects/"+id}>View More</TileButton>
     </TileContainer>)
 }
 export default Tile;

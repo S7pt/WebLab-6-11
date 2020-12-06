@@ -17,3 +17,8 @@ export const Select=styled.select`
 `
 export const FilterContainer=styled.div`
 `
+export const SelectLabel = styled.label`
+    color: black;
+    font-size: 22px;
+    margin-right: 20px;
+`

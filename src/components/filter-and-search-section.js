@@ -2,23 +2,22 @@ import {CatalogueInteractionContainer,Input,SearchButton,SearchContainer} from '
 import {useState} from 'react'; 
 import { FilterTile } from './filter-tiles';
 
-function SearchBar(){
+function SearchBar({ state: [searchText, setSearchText] }){
     const [text, setText] = useState('');
 
     return (
         <SearchContainer>
             <Input value={text} placeholder="Search..." onChange={e => (setText(e.target.value))} />
-            <SearchButton onClick={e => (e.preventDefault())}>Search</SearchButton>
+            <SearchButton onClick={e => (e.setSearchText(text))}>Search</SearchButton>
         </SearchContainer>
     );
 }
 
-function CatalogueInteractionTile(){
+export function CatalogueInteractionTile({species,difficulty,search}){
     return (
         <CatalogueInteractionContainer>
-            <FilterTile></FilterTile>
-            <SearchBar></SearchBar>
+            <FilterTile species={species} difficulty={difficulty}></FilterTile>
+            <SearchBar state={search}></SearchBar>
         </CatalogueInteractionContainer>
     )
 }
-export default CatalogueInteractionTile;

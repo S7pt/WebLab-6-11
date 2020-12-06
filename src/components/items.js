@@ -1,10 +1,11 @@
+import {useState} from "react";
 import moth from "../assets/moth-pet.jpg";
 import spider from "../assets/spider-pet.jpg";
 import caterpillar from "../assets/caterpillar-pet.jpg";
 import Tile from './tile';
 import {ItemsMap} from '../styles/items-showcase-style.styled.js';
 
-export const insects = [{
+export const items = [{
     header: 'Betty the Moth',
     price: 123,
     text: 'Where is my lamp',
@@ -102,6 +103,7 @@ export const insects = [{
 }]
 
 export function Items(){
+    const [insects]=useState(items)
     return(
         <ItemsMap>
             {insects.map((insects)=>
