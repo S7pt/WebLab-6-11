@@ -8,7 +8,7 @@ function SearchBar({ state: [searchText, setSearchText] }){
     return (
         <SearchContainer>
             <Input value={text} placeholder="Search..." onChange={e => (setText(e.target.value))} />
-            <SearchButton onClick={e => (e.setSearchText(text))}>Search</SearchButton>
+            <SearchButton onClick={setSearchText(text)}>Search</SearchButton>
         </SearchContainer>
     );
 }
