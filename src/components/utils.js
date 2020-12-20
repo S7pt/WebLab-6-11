@@ -2,6 +2,7 @@ import facebook from "../assets/facebook_icon.svg";
 import twitter from "../assets/twitter.svg";
 import linkedIn from "../assets/linkedin.svg";
 import google from "../assets/google_icon.svg";
+import "../styles/spinner.css";
 
 
 const icons = [{ name: 'facebook', src: facebook, link: '#' }, { name: 'twitter', src: twitter, link: '#' }, { name: 'google', src: google, link: '#' },
@@ -22,4 +23,7 @@ export function Image(props) {
     return (
         <img src={props.img} alt="image" height={props.height} width={props.width} />
     );
+}
+export function Spinner(){
+    return(<div className="loader">Loading</div>)
 }

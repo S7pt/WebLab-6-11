@@ -4,8 +4,9 @@ import {ItemsContainer, ViewMoreButton,ItemsMap} from '../styles/items-showcase-
 import {Tile} from '../components/tile.js';
 import {CatalogueInteractionTile} from '../components/filter-and-search-section.js';
 import { getFilteredItems } from '../connection';
+import {Spinner} from './utils';
 
-export default function CatalogPage(props) { 
+export default function CatalogPage() { 
     const [border, setBorder] = useState(4);
     const [insect,setItems]=useState(null);
     const [insectsToShow,setInsectsToShow]=useState(null);
@@ -24,12 +25,13 @@ export default function CatalogPage(props) {
     }, [speciesFilter,difficultyFilter])
 
     useEffect(() => {
-    const pattern = new RegExp(searchText, 'i');
-    let filteredItems = insect.filter(item => (searchText === '' ||
+        if(!insect) return;
+        const pattern = new RegExp(searchText, 'i');
+        let filteredItems = insect.filter(item => (searchText === '' ||
         pattern.test(item.header) || pattern.test(item.text) ||
         pattern.test(item.price)));
-    setInsectsToShow(filteredItems.slice(0,border));
-    }, [border, searchText, props.itemsList]);
+        setInsectsToShow(filteredItems.slice(0,border));
+    }, [border, searchText, insect]);
 
     function ItemShowcase(){
     return(
@@ -42,6 +44,7 @@ export default function CatalogPage(props) {
         </ItemsContainer>
         )
     }
+    if(!insectsToShow){return(<Spinner/>)}
     return(<>
     <CatalogueInteractionContainer>
         <CatalogueInteractionTile species={[speciesFilter, setSpeciesFilter]}

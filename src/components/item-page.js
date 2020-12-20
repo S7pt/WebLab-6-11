@@ -4,20 +4,27 @@ import { Link, useParams } from "react-router-dom";
 import spider from '../assets/spider-pet.jpg';
 import caterpillar from '../assets/caterpillar-pet.jpg';
 import moth from '../assets/moth-pet.jpg';
+import { getItemById } from '../connection';
+import { useState,useEffect } from 'react';
 
-export default function InsectPage(props) {
+export default function InsectPage() {
 
     const { id } = useParams();
-    const item = props.itemsList.find(item => (item.id === parseInt(id)));
+    const [insect,setInsect]=useState([]);
+    useEffect(() => {
+        (async function () {
+            setInsect(await getItemById(id));
+        })()
+    });
 
     return (
         <InsectPageDiv>
             <UpperContainer>
-                <Image img={item.img} height='400px' width='360px' />
+                <Image img={insect.img} height='400px' width='360px' />
                 <InsectInfo>
-                    <h1>{item.header}</h1>
-                    <p>{item.text}</p>
-                    <PriceContainer>${item.price}</PriceContainer>            
+                    <h1>{insect.header}</h1>
+                    <p>{insect.text}</p>
+                    <PriceContainer>${insect.price}</PriceContainer>            
                 </InsectInfo>
             </UpperContainer>
             <BottomContainer>
@@ -27,6 +34,7 @@ export default function InsectPage(props) {
                         <Button>Go Back</Button>
                     </Link>
                     <Button>Add to Cart</Button>
+                    <Button onClick={() => dispatch(add(equip))}>Add to Cart</Button>
                 </ButtonsContainer>
             </BottomContainer>
         </InsectPageDiv>

@@ -7,13 +7,14 @@ width:95%;
 background-color:white;
 display:flex;
 flex-direction:column;
-justify-content:space-around;
+justify-content:space-between;
 align-items:center;
 `
 export const ItemsMap=styled.div`
+width:1200px;
 display:flex;
 flex-direction:row;
-justify-content:space-around;
+justify-content:space-between;
 margin-left:15px;
 flex-wrap:wrap;`
 

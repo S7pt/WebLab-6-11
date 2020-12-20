@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const TileContainer=styled.div`
     margin-top:10px;
     height:500px;
-    width:400px;
+    width:350px;
     border:6px #545454 solid;
     display:flex;
     background-color:#FFFCFC;
