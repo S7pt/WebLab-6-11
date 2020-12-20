@@ -9,6 +9,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import {items} from './components/items-state.js';
 import CatalogPage from './components/catalogue-page';
 import InsectPage from './components/item-page.js';
+import CartPage from './components/cart-page';
 
 
 ReactDOM.render(
@@ -24,6 +25,9 @@ ReactDOM.render(
     </Route>
     <Route path="/insects/:id">
       <InsectPage itemsList={items}/>
+    </Route>
+    <Route path="/cart">
+      <CartPage/>
     </Route>
     </Switch>
     <Footer/>
