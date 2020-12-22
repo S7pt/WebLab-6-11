@@ -10,15 +10,19 @@ import {items} from './components/items-state.js';
 import CatalogPage from './components/catalogue-page';
 import InsectPage from './components/item-page.js';
 import CartPage from './components/cart-page';
-
+import{Provider} from 'react-redux';
+import store from './store/store';
+import {CheckoutPage} from './components/checkout-page.js';
+import {SuccessPage} from './components/success-page.js';
 
 ReactDOM.render(
   <React.StrictMode>
+    <Provider store={store}>
     <BrowserRouter>
     <Header />
     <Switch>
       <Route exact path="/">
-    <MainBody></MainBody>
+    <MainBody/>
     </Route>
     <Route path="/catalogue">
       <CatalogPage itemsList={items}/>
@@ -29,9 +33,16 @@ ReactDOM.render(
     <Route path="/cart">
       <CartPage/>
     </Route>
+    <Route path="/checkout">
+        <CheckoutPage />
+    </Route>
+    <Route path="/success">
+        <SuccessPage />
+    </Route>
     </Switch>
     <Footer/>
     </BrowserRouter>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

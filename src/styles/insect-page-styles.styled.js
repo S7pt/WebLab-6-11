@@ -51,8 +51,15 @@ export const Button = styled.button`
     height: 50px;
     font-size: 22px;
     font-weight: 700;
-    background-color: white;
-    border: 3px solid black;
+    border-radius:25px;
+    border-color:black;
+    background-color:#000ed0;
+    color:white;
+    text-align:center;
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
     margin-bottom:20px;
 ` 
 export const PriceContainer = styled.p`

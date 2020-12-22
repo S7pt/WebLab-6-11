@@ -25,6 +25,7 @@ export const TilePriceTag=styled.p`
     font-family:Arial, Helvetica, sans-serif;
     font-size:14px;
     `;
+
 export const TileButton=styled.a`
     border-radius:15px;
     border-color:black;

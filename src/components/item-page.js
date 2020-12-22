@@ -1,16 +1,17 @@
 import { Image } from '../components/utils'
 import {UpperContainer, InsectInfo, BottomContainer, ButtonsContainer, Button, PriceContainer,InsectPageDiv} from '../styles/insect-page-styles.styled.js'
 import { Link, useParams } from "react-router-dom";
-import spider from '../assets/spider-pet.jpg';
-import caterpillar from '../assets/caterpillar-pet.jpg';
-import moth from '../assets/moth-pet.jpg';
+import { add } from '../store/actions.js';
 import { getItemById } from '../connection';
 import { useState,useEffect } from 'react';
+import {useDispatch} from 'react-redux'
 
 export default function InsectPage() {
 
     const { id } = useParams();
     const [insect,setInsect]=useState([]);
+    const dispatch=useDispatch();
+    
     useEffect(() => {
         (async function () {
             setInsect(await getItemById(id));
@@ -33,8 +34,7 @@ export default function InsectPage() {
                     <Link to="/catalogue">
                         <Button>Go Back</Button>
                     </Link>
-                    <Button>Add to Cart</Button>
-                    <Button onClick={() => dispatch(add(equip))}>Add to Cart</Button>
+                    <Button onClick={() => dispatch(add(insect))}>Add to Cart</Button>
                 </ButtonsContainer>
             </BottomContainer>
         </InsectPageDiv>

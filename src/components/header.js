@@ -10,7 +10,7 @@ function Header() {
             <HeaderButtons>
                 <Link to="/" style={{ color: 'inherit', textDecoration: 'inherit'}}><HeaderButton>Home</HeaderButton></Link>
                 <Link to="/catalogue" style={{ color: 'inherit', textDecoration: 'inherit'}}><HeaderButton>Catalogue</HeaderButton></Link>
-                <Link to="/catalogue" style={{ color: 'inherit', textDecoration: 'inherit'}}><HeaderButton>Cart</HeaderButton></Link>
+                <Link to="/cart" style={{ color: 'inherit', textDecoration: 'inherit'}}><HeaderButton>Cart</HeaderButton></Link>
             </HeaderButtons>
         </HeaderContainer>
     )

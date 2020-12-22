@@ -12,9 +12,12 @@ export const CartPageContainer = styled.div`
     }
 `
 
-export const EquipContainer = styled.div`
+export const InsectsCartContaier = styled.div`
     height: 160px;
-    width: 100%;
+    border:2px solid black;
+    margin-top:15px;
+    background:white;
+    width: 1050px;
     border-radius: 16px;
     display: flex;
     align-items: center;
@@ -30,24 +33,38 @@ export const EquipContainer = styled.div`
 `
 
 export const CountButton = styled.button`
-    background-color: white;
-    border: 3px solid black;
-    font-size: 30px;
-    font-weight: 700;
-    margin: 0 5px;
-    width: 40px;
-    height: 40px;
-    text-align: center;
+    border-radius:25px;
+    border-color:black;
+    height:40px;
+    width:40px;
+    margin-top:5px;
+    background-color:#000ed0;
+    color:white;
+    text-decoration:none;
+    text-align:center;
+    font-size:30px;
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
 `
 
 export const DeleteButton = styled.button`
-    width: 160px;
-    height: 40px;
-    margin: 0 18px 0 10px;
-    font-size: 26px;
-    font-weight: 700;
-    background-color: white;
-    border: 3px solid black;
+    border-radius:25px;
+    border-color:black;
+    height:50px;
+    width:160px;
+    margin-left:20px;
+    margin-right:20px;
+    background-color:#000ed0;
+    color:white;
+    text-decoration:none;
+    text-align:center;
+    font-size:30px;
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
 `
 
 export const NavButtonsContainer = styled.div`
@@ -64,8 +81,15 @@ export const NavButton = styled.button`
     height: 50px;
     font-size: 26px;
     font-weight: 700;
-    background-color: white;
-    border: 3px solid black;
+    border-radius:25px;
+    border-color:black;
+    background-color:#000ed0;
+    color:white;
+    text-align:center;
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
 `
 
 export const EmptyStyle = styled.h1`
